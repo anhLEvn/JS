@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 16-boolean-suite.html
+
+        // 7 falsy 
+        // javascript va transtype automatiquement certaines valeurs en false 
+
+        let a = 0;
+        let b = "";
+        let c = NaN ; // chiffre 20 * "bonjour"
+        let d = null ;
+        let e = -0;
+        let f ; // undefined variable que l'on créé et auquel on ne donne pas de valeur créé mais avec le type undefined 
+        let g = false ;
+
+        // javascript if(a){}
+        // javascript if(0){}
+        // javascript if(false){}
+
+        // if(f){}
+        // if(undefined){}
+        // if(false){}
+
+        // if(g){}
+        // if(false){}
+
+        let h = [];
+        // if(h){}
+       // if(true){}
+
+       let i = {};
+      /*  if(i){}
+       if({}){}
+       if(true){} */
+
+       let j = " ";
+       if(j){}
+       if(" "){}
+       if(true){}
+
+       let toto = 0
+        
+       if(toto){
+        console.log(toto)
+       }
+
+       if(typeof(toto) == "number"){ // ===
+        console.log(toto)
+       }
+
+       if(toto == "0" && typeof(toto)== "string"){ // === 
+
+       }
+
+       // falsy // javascript a été écrit en 10 jours 
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 09-scope-closure.html
+
+        // scope = portée des variables 
+        // est ce qu'une variable est disponible ? existe ? 
+        // est ce qu'une variable est utilisable ?? 
+
+
+        let premier = "bonjour"; // portée // scope globale 
+
+        // cette variable peut être utilisée n'importe où dans votre code 
+
+        console.log(premier);
+
+        // MAIS AUSSI dans la déclaration d'une fonction 
+
+        function calcul( a ){
+            // PHP 
+            // globale premier ;
+            console.log(`${premier} ${a}`);
+        }
+
+        calcul( 10 );
+
+        function calcul2( a ){
+            let deuxieme = "hello"; // cette variable créé dans la fonction
+            // portée locale 
+            // n'existe QUE dans la fonction 
+            console.log(deuxieme);
+            return deuxieme;
+        }
+
+        // console.log(deuxieme); // erreur 
+        // ReferenceError: deuxieme is not defined
+
+        let deux = calcul2(  ) ; 
+
+        // la différence entre le mot clé var let const 
+
+        // var ne fait pas de vérification si la variable a déjà été créée
+        
+        var phrase = "bonjour les amis";
+
+        var phrase = 2 ;
+
+        function phrase(){ 
+            console.log("je suis une phrase");
+        }
+        // aucune erreur ????? 
+
+        let phrase2 = "hello";
+        // let phrase2 = [];
+        // function phrase2(){} ; 
+
+        // SyntaxError: redeclaration of let phrase2
+            phrase2 = [];
+            phrase2 = true;
+        // avec let, une fois que la variable est créée => changer sa valeur 
+
+        // créer la variable ET on veut pas pouvoir changer sa valeur 
+
+        const phrase3 = "hello";
+        // function phrase3(){} //  redeclaration of const phrase3
+        //   phrase3 = {}; // TypeError: invalid assignment to const 'phrase3'
+
+        //    phrase3 = "toto";
+
+        // si j'ai une variable qui ne va pas changer de valeur const pour la créer
+        // si j'ai une variable qui va changer au cours de l'exécution => let (jamais var)
+
+        // car une variable créée avec le mot clé var peut être recréée sans message d'erreur 
+
+
+        // créer une variable sans aucun mot clé let var const 
+
+
+        console.log( inconnu ); // utilise la variable AVANT sa création 
+        // undefined
+
+        // var inconnu = "information"; // créé ma variable avec var 
+
+        var inconnu = []; // can't access lexical declaration 'inconnu' before initialization
+
+        // hoisting => portage 
+
+        coucou(); // 
+
+        function coucou(){ // déclare ma fonction et je l'exécute AVANT 
+            alert("bonjour");
+        }
+
+        // coucou2(); erreur 
+
+        let coucou2 = function(){
+            alert("hello");
+        }
+
+        coucou2(); // ok 
+
+
+        // closure => le fait que lorsque l'on crée une fonction la fonction garde en mémoire une copie de toutes les variables externes 
+
+        let hello = "lorem ipsum";
+
+
+        function genererP (){
+            // accéder à la variable hello mais aussi à la variable premier 
+            // mais aussi les modifier 
+            hello = []; //attention ne pas mettre let devant le nom de la variable 
+            // contexte d'exécution 
+        }
+        genererP ();
+        console.log(hello);
+
+        function toto(){
+            console.log(hello);
+        }
+        toto();
+
+
+        function closure(){
+            let information = "lorem ipsum sed" ; // variable privee
+            function calcul (){
+                console.log(information);
+            }
+            return calcul;
+        }
+
+        let c = closure()
+        c();
+
+        closure()(); // closure // currying 
+
+
+        function rectange (){
+            const largeur = 10 ;
+            const hauteur = 20 ; // propriété privée 
+            function aire(){ // méthode privée 
+                return largeur * hauteur ;
+            }
+            function perimetre (){
+                return (largeur + hauteur ) * 2
+            }
+            return { 
+                aire : aire,
+                perimetre : perimetre
+            }
+        }
+
+        console.log(rectange().aire());
+        console.log(rectange().perimetre());
+
+        // perimetre (); // this **
+
+        let a = 1 + 5 + "10" + 2 ;
+        console.log(a);
+        let b = true || false && true ;
+        console.log(b);
+    </script>
+</body>
+</html>

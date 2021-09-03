@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 01-regex.html 
+
+        // regex = expression régulier 
+        // vérifier si une chaine de caractère ressemble / correspond à une forme 
+        // pattern
+
+        //  4 points vu
+        //  => créer un regex
+        let pattern = new RegExp("...");
+        let pattern2 = /.../;
+
+        // .match(pattern) .test(pattern) .replace(pattern) .search(pattern)
+
+        // comment écrire un pattern 
+
+        // 1 juste une lettre => /a/ => la chaine doit contenir la lettre a n'importe où
+        // 2 groupe de lettre plage de lettre  => /[a-z]/  /[A-Z]/  /[aeiouy]/ /[0-9]/
+        // plage cumulée  => /[a-zA-Z0-9]/  
+
+        // 3 multiplicateur => qui s'écrit après les plages /[a-z]{2}/ deux minuscules qui se suivent n'importe où dans la chaine de caractère 
+
+         // multiplicateur => qui s'écrit après les plages /[a-z]{2 , 4}/
+         // multiplicateur => qui s'écrit après les plages /[a-z]{2 , }/ à partir de 2 
+
+        let information = "0zAt37h,"; 
+        let pattern3 = /[a-z]{2}/ ;
+        console.log(information.match(pattern3)); // null
+
+        let information2 = "0zAt37he,"; 
+        console.log(information2.match(pattern3)); 
+
+        // ^ à écrire une seule fois dans le regex => une chaine de caractère qui commence par 
+        // $ à écrire une seule fois dans le regex => une chaine de caractère qui finit par 
+        // /^   $/ => le chaine de caractère doit intégralement vérifier le pattern 
+
+        let auteur = "Victor Hugo";
+
+        // => pattern commence et finit par une lettre 
+        // majuscule ou en minuscule 
+        console.log(auteur.length);
+
+        let patternAuteur = /^[a-zA-Z ]{11}$/;
+
+        console.log(auteur.match(patternAuteur));
+
+        // pattern la première lettre est obligatoirement une majuscule 
+        // les lettres suivantes sont des minuscules ou des majuscules ou des espaces => sait pas combien 
+        // de caractère exactement (au moins 1 caractères)
+
+        let patternAuteur2 = /^[A-Z]{1}[a-zA-Z ]{1,}$/;
+        
+        console.log(auteur.match(patternAuteur2));
+        
+        let patternAuteur2_v2 = /^[A-Z][a-zA-Z ]{1,}$/;
+        console.log(auteur.match(patternAuteur2_v2));
+
+        let patternAuteur2_v3 = /^[A-Z][a-zA-Z ]+$/;
+        console.log(auteur.match(patternAuteur2_v3));
+    </script>
+</body>
+</html>
+
+<!--
+    créer le fichier 02-exo.html qui contient une balise script 
+
+    pouvez vous me créer un seul pattern qui répond true qui je vous donne les chaines de caractère suivante 
+
+    Bonjour les amis
+    J'habite à Paris dans le 12ème
+
+-->

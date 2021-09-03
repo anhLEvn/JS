@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, section {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            padding:0;
+        }
+        li, img{
+            margin: 0 20px;
+        }
+        img{
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- sur le site placeholder  https://placeholder.com/ -->
+    <div>
+        <section>
+            <img src="diapo1.jpg" alt="">
+            <img src="diapo2.jpg" alt="">
+        </section>
+        <ul>
+            <li><button>diapo 1</button></li>
+            <li><button>diapo 2</button></li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In adipisci soluta pariatur unde ducimus accusantium quaerat! Nobis illo iste possimus quisquam perferendis nemo totam velit optio eum error, vel, accusamus repellendus officiis eligendi, commodi sequi id adipisci dolor fuga distinctio blanditiis sint? Doloremque nostrum quasi minima iusto tenetur, in nemo?</p>
+    </div>
+    <script>
+        let img = document.querySelectorAll("img");
+        let button = document.querySelectorAll("button");
+
+        img[1].style.display = "none";
+
+        button[0].addEventListener("click", () => {
+            img[1].style.display = "none";
+            img[0].style.display = "block";
+        })
+
+        button[1].addEventListener("click", () => {
+            img[0].style.display = "none";
+            img[1].style.display = "block";
+        });
+
+        // balise html affiché (visible à l'écran)
+        //   propriété css display : block
+        //   propriété css display : inline 
+
+        // balise html masquée (invisible à l'écran MAIS présent dans le DOM)
+        // propriété css display : none
+
+    </script>
+
+</body>
+</html>
+<!-- 10h51 event // this 
+    03-this.html
+-->

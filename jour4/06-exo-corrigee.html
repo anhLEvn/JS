@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button data-index="0">Action 1</button>
+    <button data-index="1">Action 2</button>
+    <button data-index="2">Action 3</button>
+    <!-- p*3>lorem20 -->
+    <p>Nesciunt, ipsam dignissimos. Ex numquam sequi facere harum neque recusandae, ullam beatae.</p>
+    <!-- 0 -->
+    <p>Dolor nobis numquam pariatur, totaris harum  vel inventore doloribus dignissimos.</p>
+    <!-- 1 -->
+    <p>odit sit quam! Eveniet, corrupti! Corrupti itaque cumque id maxime, veritatis quibusdam.</p>
+    <!-- 2 -->
+    <script>
+        function systemeOnglet( indexParagrapheAfficher ){
+            document.querySelectorAll("p").forEach( (item , index) => {
+                if(index == indexParagrapheAfficher){
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            } )
+        }
+
+        systemeOnglet( 0 );
+
+        document.querySelectorAll("button").forEach( function(item){ 
+                item.addEventListener("click", function () {
+                    console.log(this) ;
+                    systemeOnglet( this.dataset.index) ;
+                })
+            }
+        )
+
+        // autre solution possible 
+
+        let btn = document.querySelectorAll("button");
+        let p = document.querySelectorAll("p");
+
+        for(let i = 0 ; i < btn.length ; i++){
+            btn[i].addEventListener("click", function(){
+                for(let j = 0 ; j < p.length; j++){
+                    p[j].style.display = "none";
+                }
+                p[i].style.display = "block";
+            })
+        }
+       
+
+
+    </script>
+</body>
+</html>

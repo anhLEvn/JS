@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 03-regex-suite.html
+
+        // raccourci pour les multiplicateurs
+        let p1 = /a{0,1}/; // => +33 0101010 => 33
+        let p1_2 = /a?/;
+
+        let p2 = /a{0,}/;
+        let p2_v2 = /a*/;
+
+        let p3 = /a{1,}/;
+        let p3_v2 = /a+/;
+
+        let p4 = /a{5,}/
+
+        // raccourci plage de caractère 
+
+        // certains caractères doivent être échappés
+        // si veux ajouter dans ma plage de caractère le symbole - 
+
+        let p5 = /[a-z\-]/ ; // toutes les minuscules et le symbole -
+        let p6 = /[a-z\-\[\]]/ ; // toutes les minuscules et le symbole - et le symbole ouvrant [ et fermant ]
+
+        let p7 = /[.]/ ; // tous les caractères sans exception
+        let p7_v2 = /./ ; // tous les caractères sans exception
+
+        let p8 = /[\.]/ ; // uniquement le symbole .   => = ; , % . * {} [ ] ( ) " ' @ # 
+        let p8_v2 = /\./ ; // uniquement le symbole .
+
+        let p9 = /[a]/; 
+        let p9_v2 = /a/; // les deux sont équivalents
+
+        let p10 = /[0-9]/ ; 
+        let p10_v2 = /[\d]/ ;  // digit 
+        let p10_v3 = /\d/ ;  // digit 
+
+        // regex validator => https://regex101.com/
+
+        let p11 = /\D/ ; // tout sauf des chiffres
+        let p12 = /\w/ ; // des caractères a-z A-Z éàèê ... 
+        let p13 = /\W/ ; // inverse de \w
+
+        // let p10_versionPHP = #\d#;
+        // SQL => joker wildcard . => *
+        // %eofihezoh
+        // eofihezoh%
+        // LEFT()
+        // RIGHT()
+
+        // linux => bash 
+        // vérification sur des données reçus => dans un formulaire // importer des données 
+        // traitement => envoyer une email / enregistrer en base de données / créer un document ... 
+
+        // . ; , ? ! -
+        let p14 = /[\.;,+*?!\-]?/
+
+        let phrase = "?"
+        console.log(phrase.match(p14));
+
+        // rdv 11h00 @ toute suite !! 
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer un fichier 04-exo.html 
+
+    créer 7 variables qui vont contenir des emails 
+
+    test@yahoo.fr
+    test12@yahoo.fr
+    test_12@yahoo.fr
+    test_12@yahoo.org
+    test_12@yahoo.info
+    test.prenom@yahoo.info
+    test-prenom@yahoo.info
+
+    déterminer le pattern (regex) qui permet de vérifier tous ces emails
+
+-->

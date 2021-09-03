@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div>
+            <input type="text">
+        </div>
+        <div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit">
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault();
+
+            let nom = document.querySelector("input").value;
+            let commentaire = document.querySelector("textarea").value;
+
+            if(nom.length >= 3 && commentaire.length >= 3){
+                e.target.submit()
+            } else {
+                console.log("veuillez compléter les deux champs");
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!-- rdv 15h47 bon café !!!!!!!!
+    14-string-avance.html
+
+-->

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisicing.</li>
+        <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </li>
+    </ul>
+  <script>
+
+      let etat = 0; 
+  let button = document.querySelector("button"); 
+  let lis = document.querySelectorAll("li"); 
+  button.addEventListener("click", () => {
+      let miseEnForme = {}
+      if(etat == 0){
+          etat = 1; 
+          miseEnForme ={
+              "font-weight": "bold",
+              "textAlign" : "center", 
+              "color" : "green"
+          }
+      }else{
+          etat = 0; 
+          miseEnForme ={
+              "font-weight": "normal",
+              "textAlign" : "left", 
+              "color" : "black"
+          }
+      }
+      document.querySelectorAll("li").forEach (item => {
+          for(let prop in miseEnForme){
+              item.style[prop] = miseEnForme[prop]; 
+          }
+      })
+   
+      })
+  
+  
+  </script>
+</body>
+</html>
+<!--créer une page 14-exo.html qui contient la balise script 
+
+    1 button qui contient le texte Action 1
+      liste <ul> qui contient 2 éléments <li>
+
+    2 si je clique sur le bouton 
+        alors je vais modifier le style des deux balises <li>
+
+            mettre en gras + changer leur couleur à vert + centrer
+
+      si je reclique alors les deux li vont reprendre leurs caractèristiques initiales
+    -->

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let formation = {
+            nom : "Js initiation et DOM",
+            duree: 5,
+            unite: "jours",
+            organisme: {
+                nom: "Doranco",
+                ville: "Paris"
+            },
+            infos : function(){
+                console.log(`Je suis une formation dont le sujet est  ${this.nom} 
+                au près de ${this.organisme.nom}. La formation va durée ${this.duree}
+                 ${this.unite} à ${this.organisme.ville}`) ;
+            }  
+  } 
+
+  formation.infos(); 
+
+
+  </script>
+</body>
+</html>
+<!--
+    créer le fichier 04-exo.html contenant la balise script 
+
+    créer un objet formation
+
+    il contient 4 propriétés 
+            nom : "Js initiation et DOM"
+            duree = 5
+            unite "jours"
+            organisme est objet 2 propriétés
+                nom Doranco
+                ville Paris
+
+    à partir de cet objet réaliser les concaténations suivantes 
+
+    je suis une formation dont le sujet est  Js initiation et DOM au près de Doranco
+    la formation va durer 5 jours à Paris
+    
+    afficher ces deux phrases dans la console 
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // créer l'objet litteral 
+        let formation = {
+            nom : "Js initiation et DOM" ,
+            duree : 5 ,
+            unite : "jours" ,
+            organisme : {
+                nom : "Doranco" ,
+                ville : "Paris"
+            }
+        };
+
+        let phrase = `je suis une formation dont le sujet est ${formation.nom} au près de ${formation.organisme.nom}`;
+        // template string
+
+        let phrase2 = `la formation va durer ${formation.duree} ${formation.unite} à ${formation.organisme.ville}`;
+
+        console.log(phrase);
+        console.log(phrase2);
+
+        let phrase3 = "Je suis une formation dont le sujet est " + formation.nom + " auprès de " + formation.organisme.nom;
+        let phrase4 = "La formation va durer " + formation.duree + " à " + formation.organisme.ville;
+        console.log(phrase3);
+        console.log(phrase4);
+
+
+
+
+
+    </script>
+</body>
+</html>
+-->

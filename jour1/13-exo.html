@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let titre = "Premier article";
+        let contenu = "lorem ipsum";
+        let date = "01/01/2019";
+
+        // plusieurs solutions possibles concatenation avec le symbole + et " " et échappement
+
+        let article = "<article>\n" +
+            "<header class=\"article_entete\">\n" +
+            "<h1>" + titre + " </h1>\n" +
+            "<time>" + date + "</time>\n" +
+            "</header>\n" +
+            "<div class=\"article_contenu\">\n" +
+            "<p>" + contenu + "</p>\n" +
+            "</div>\n" +
+            "</article>";
+        console.log(article);
+
+        // += opérateur unaire 
+        let article2 = "<article>\n"
+        article2 += "<header class=\"article_entete\">\n"
+        article2 += "<h1>" + titre + " </h1>\n"
+        article2 += "<time>" + date + "</time>\n"
+        article2 += "</header>\n"
+        article2 += "<div class=\"article_contenu\">\n"
+        article2 += "<p>" + contenu + "</p>\n"
+        article2 += "</div>\n"
+        article2 += "</article>";
+
+        console.log(article2);
+
+        // template string `` et ${}
+
+        let article3 = `
+<article>
+    <header class="article_entete">
+        <h1>${titre}</h1>
+        <time>${date}</time>
+    </header>
+    <div class="article_contenu">
+        <p>${contenu}</p>
+    </div>
+</article>`;
+        console.log(article3);
+
+        // autre solution 
+        let article4 = `<article>
+    <header class="article_entete">
+        <h1>%s</h1>
+        <time>%s</time>
+    </header>
+    <div class="article_contenu">
+        <p>%s</p>
+    </div>
+    </article>`
+
+        console.log(article4, titre, date, contenu); // langage C sprintf()
+    </script>
+</body>
+
+</html>

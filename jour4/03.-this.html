@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 03-this.html 
+
+        // dans les langages orientés objets classiques PHP / Java 
+        // mot clé => this que dans class 
+        
+        // en javascript => this peut être utilisé dans des class MAIS aussi directement dans des fonctions // voir même tout seul 
+
+        class A{
+            prop = 2 ;
+            methode(){
+                console.log(this.prop) 
+            }
+        }
+
+        // MAIS en + 
+        function b (){
+            console.log(this); // objet global window 
+        }
+        b (); 
+
+        console.log(this); // objet global window 
+
+    </script>
+    <button> Action 1 </button>
+    <script>
+        document.querySelector("button").addEventListener("click" , b );
+        // dans ce cas : this n'est plus l' objet global window 
+        // MAIS la balise button 
+        // this en fonction de la manière de l'utilisé 
+        // this n'est pas le même objet 
+
+        // this => récupère le contexte d'exécution 
+        // qu'est ce qui m'exécute ? où je suis exécuté ? 
+
+        // je veux que lorque je clique sur le bouton, je veux modifier le texte écrit dedans 
+        function c(){
+            this.innerHTML = "bouton modifié";
+        }
+
+        document.querySelector("button").addEventListener("click" , c );
+
+        c();
+
+    </script>
+</body>
+</html>

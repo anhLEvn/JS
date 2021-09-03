@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>action 1</button>
+    <button>action 2</button>
+    <script>
+        // si je clique sur le bouton 1 => modifier son contenu
+        // si je clique sur le bouton 2 => modifier son contenu
+
+        let btn = document.querySelectorAll("button");
+
+        function modification () {
+            this.innerText = "modif";
+        }
+
+        /* btn[0].addEventListener("click" , modification);
+
+        btn[1].addEventListener("click" , modification); */
+
+        // si je crée une variable dans un fichier  est ce que je peux l'utiliser dans une fichier ??? 
+        // demain plusieurs fichiers => scope 
+
+        // est il possible de ne pas répéter addEventListener() pour chaque bouton dans la page ?? oui => boucle 
+
+       /*  for(let i = 0 ; i < btn.length; i++){
+            btn[i].addEventListener("click" , modification);
+        } */
+
+       /*  btn.forEach( function(item) { 
+            item.addEventListener("click" , modification);
+        } ) */
+
+        btn.forEach( (item) =>  { 
+            item.addEventListener("click" , modification);
+        } );
+
+        // point suivant 
+
+    </script>
+</body>
+</html>
+
+<!--
+    05-data.html 
+-->

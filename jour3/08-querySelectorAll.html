@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- p*3>lorem10 -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, dolor!</p> <!-- 0 -->
+    <p>Autem unde, earum dolore impedit incidunt praesentium rerum sunt assumenda.</p> <!-- 1 -->
+    <p>Harum at praesentium aut voluptatem, dignissimos totam officia. Perferendis, rem.</p> <!-- 2 -->
+    <script>
+        // modifier le contenu textuel du 2ème paragraphe 
+        document.querySelector("p").innerHTML = "modification";
+        // attention la méthode querySelector() sélectionner la 1ère balise qui respecte le sélecteur css mis dans les guillements 
+
+        let p = document.querySelectorAll("p"); 
+        // récupérer TOUS les p dans la page et retourner dans un tableau array 
+
+        console.log(p); // [ {} , {} , {} ]
+        p[1].innerHTML = "je modifie le 2ème p";
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        // 11-balise.html
+
+        document.querySelector("p").innerHTML = "lorem <br> ipsum" ;
+
+        //.innerHTML = le texte peut contenir des balises html ET le html est bien exécuté 
+
+        document.querySelector("p").innerText = "bonjour <br> les amis";
+
+        // .innerText = si le texte contient une balise html elle n'est pas exécutée, juste écrite 
+
+        // avec javascript il est possible d'ajouter des attributs à la balise sélectionnée 
+
+        // ajouter à la balise p un attribut => id="test"
+        document.querySelector("p").setAttribute("id" , "test");
+
+        document.querySelector("p").setAttribute("title" , "je suis un p");
+
+        // 2 manières styliser la balise sélectionnée 
+
+        // 1ère manière de faire 
+        document.querySelector("p").style["font-size"] = "14px";
+        document.querySelector("p").style["color"] = "red";
+
+        document.querySelector("p").style.background = "yellow";
+        document.querySelector("p").style.borderRadius = "5px";
+
+        document.querySelector("p").style.fontWeight = "bold";
+        document.querySelector("p").style["font-weight"] = "bold";
+
+        // 2ème manière de faire 
+        // a/ Ajouter un attribut à la balise via javascript
+        // b/ appeler un css qui utilise cet attribut 
+    </script>
+    <style>
+        .decouverte{
+            font-size: 120px !important;
+            text-align: right;
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="stylesheet" href="11-style.css">
+    <script>
+        document.querySelector("p").setAttribute("class", "decouverte");
+        document.querySelector("p").classList.add("decouverte");
+    </script>
+</body>
+</html>

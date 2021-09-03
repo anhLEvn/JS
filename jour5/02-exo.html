@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = "Bonjour les amis";
+        let p2 = "J'habite à Paris dans le 12ème";
+
+        // commencer par une majuscule 
+        // pas la même longueur pour les deux chaines 
+        // minuscule / majuscule / espace / caractère 'àè / 12
+        // au moins un caractère pour ces deux chaines // au moins 16 caractères 
+
+        let pattern = /^[A-Z][a-zA-Z 'àè12]{15,}$/;
+        //let pattern = /^[A-Z][a-zA-Z 'àè12]{1,}$/;
+        //let pattern = /^[A-Z][a-zA-Z 'àè12]+$/;
+        //let pattern = /^[A-Z][a-zA-Z 'àè12]+/;
+        //let pattern = /^[a-zA-Z 'àè12]+/;
+        //let pattern = /^[a-zA-Z 'àè12]+$/;
+        //let pattern = /^[A-Z]/;
+
+        console.log(p1.match(pattern));
+        console.log(p2.match(pattern));
+
+    </script>
+</body>
+</html>
+<!-- 03-regex-suite.html -->

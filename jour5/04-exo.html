@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let emails = [
+            "test@yahoo.fr",
+            "test12@yahoo.fr",
+            "test_12@yahoo.fr",
+            "test_12@yahoo.org",
+            "test_12@yahoo.info",
+            "test.prenom@yahoo.info",
+            "test-prenom@yahoo.info"
+        ];
+
+        // email 
+        // partie 1 => test12
+            // [a-z0-9_\.\-]
+            // {1,}  => +
+        // partie 2 => @
+            // [@]
+            // {1}
+            // => @
+        // partie 3 => yahoo => domaine
+            // [a-z]
+            // au minimum 1 +
+        // partie 4 => symbole .
+            // [\.]
+            //{1}
+        // partie 5 => extension fr / org ... 
+            // [a-z]
+            // {2,}
+
+
+        let patternEmail = /^[_a-z0-9\-\.]+@[a-z]+\.[a-z]{2,}$/ ;
+
+        emails.forEach(email => console.log( email.match(patternEmail)) ); 
+
+        // autres solutions possibles :
+        // let pattern = /[a-z0-9\.\-_]+@yahoo\.[a-z]{2,4}/;
+        // let pattern = /[a-z0-9\.\-_]+@[yaho]{5}\.[a-z]{2,4}/;
+
+        // GOOGLE.fr
+        // GOOGLE.FR
+        // Google.FR
+        // GooGle.FR
+        // Bonjour@GOOGLE.fr
+        // "BONJOUR@GOOGLE.fr" TCP IP 
+
+        // autres solutions possibles :
+        // let pattern =/[a-z0-9\.\-_]+[@][a-z]+[\.][a-z]{2,4}/;
+
+        // let pattern = /^test[a-z0-9\.\-_]+[@][yahoo]+[\.]+[a-z]{2,4}$/;
+
+        // https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+    </script>
+</body>
+</html>
+
+<!--
+    créer le fichier 05-exo.html 
+    
+    html
+        formulaire 
+            input nom
+            input email 
+            commentaire textarea
+            bouton de soumission
+
+    script 
+        au moment de la soumission du formulaire
+            1 bloquer le rechargement automatique de la page 
+            2 vérifier les données des différents champs input / textarea
+
+                nom doit avoir au moins 5 caractères et majuscule minuscule espace ' maximum 255
+                email doit être un email valide
+                commentaire accepte tous les caractères sauf les caractères < > au minimum 5 caractères
+
+            3 si ces conditions sont respectées => alert("merci pour message")
+            sinon   afficher dans la console quelles champs ne sont pas conformes 
+
+
+            let patternComm = /^[^\>\<]{5,}/;
+
+-->

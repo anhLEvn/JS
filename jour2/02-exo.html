@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//créer un tableau vide nommé exo
+  let exo = [];  
+  console.log(exo); 
+//1 ajouter 3 valeurs "Bonjour", les , amis
+  exo.push("Bonjour", "les", "amis"); 
+  console.log(exo); 
+
+// 2 ajouter au début le texte hello
+  exo.unshift("Hello"); 
+  console.log(exo); 
+
+//3 ajouter à lafin le texte "au revoir"
+  exo.push("au revoir"); 
+  console.log(exo);  
+  
+  //4 ajouter entre Bonjour et "les" la valeur "information"
+  let indexLes = exo.indexOf("les"); 
+  exo.splice(indexLes, 0, "information"); 
+  console.log(exo); 
+
+  //5 supprimer la valeur "amis"
+  exo.splice(4,1); 
+  console.log(exo); 
+
+  //6 déterminer la position de l'élément qui à la valeur "Bonjour"
+  let phrase = `la position du mot Bonjour est ${exo.indexOf("Bonjour")}`; 
+  console.log(phrase); 
+
+  //7 determiner si le tableau contient la valeur "Les"
+  let phrase2 = `${exo.includes("Les")? "contient Les": "ne contient pas Les"}`;  
+  console.log(phrase2); 
+
+  </script>
+</body>
+</html>
+<!--
+    créer le fichier 02-exo.html qui contient une balise script
+
+    créer un tableau vide nommé exo
+
+    1 ajouter 3 valeurs "Bonjour", les , amis
+
+    2 ajouter au début le texte hello
+
+    3 ajouter à lafin le texte "au revoir"
+
+    4 ajouter entre Bonjour et "les" la valeur "information"
+    
+    5 supprimer la valeur "amis"
+
+    6 déterminer la position de l'élément qui à la valeur "Bonjour"
+    7 determiner si le tableau contient la valeur "Les"
+-->

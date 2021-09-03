@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let taches = ["écrire un email", "rédiger un article"]; 
+  console.log(taches); 
+
+  taches.splice(1,0, "regarder une video Youtube sur le articles"); 
+  console.log(taches);
+
+  taches.shift(); 
+  console.log(taches);
+ // 4 parcourir chaque tâche et ajouter au début et à lafin de la tache une balise <p></p>
+//console.log(articles.map( item  => `<h1>${item}</h1>` ))
+  console.log(taches.map(item => `<p>${item}</p>`)); 
+
+ 
+
+
+  </script>
+</body>
+</html>
+<!--créer le fichier 02-exo.html contient une balise script 
+
+    créer dans cette balise un tableau taches et qui est vide 
+
+    1 ajouter dans ce tableau les deux tâches suivantes : "écrire un email", "rédiger un article "
+
+    2 ajouter entre les deux tâches "regarder une vidéo Youtube sur le sujet"
+
+    3 supprimer la première tâche "écrire un email"
+
+    4 parcourir chaque tâche et ajouter au début et à lafin de la tache une balise <p></p>
+
+    ["<p>regarder une vidéo Youtube sur le sujet</p>" , "<p>rédiger un article </p>"]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let taches = [];
+        taches.push("écrire un email", "rédiger un article ");
+        taches.splice(1,0, "regarder une vidéo Youtube sur le sujet");
+        taches.shift(); // taches.splice(0,1); 
+
+        let tacheHtml = taches.map( function( item ){  return `<p>${item}</p>` } );
+        // taches.map(  item => `<p>${item}</p>` );        
+        console.log(tacheHtml);
+        console.log(taches);
+        // .map() copie du tableau d'origine taches et l'enrichie 
+
+        // avec un forEach()
+
+        let tacheHTML2 = [];
+
+        taches.forEach( function( item ){ tacheHTML2.push(`<p>${item}</p>`) } )
+        // taches.forEach(  item =>  tacheHTML2.push(`<p>${item}</p>`)  )
+
+        console.log(tacheHTML2);
+
+
+    </script>
+</body>
+</html>
+
+-->

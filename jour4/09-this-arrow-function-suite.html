@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button>
+    <button>Action 2</button>
+    <script>
+
+        document.querySelectorAll("button")[0].addEventListener("click", function(e){
+            // this.innerHTML = "modification";
+            e.target.innerHTML = "modification"; // fonctionne de la même manière 
+        })
+
+        document.querySelectorAll("button")[1].addEventListener("click", e => {
+            //this.innerHTML = "modification 2"; ne fonctionne pas 
+            e.target.innerHTML = "modification 2";
+            console.log(e) ;
+            // e.target === document.querySelectorAll("button")[1]
+        })
+
+        // la méthode addEventListener( "nom événement à écouter" , fonction( e ){ } )
+
+        // "nom événement à écouter" => click keyup keydown ..... 
+        // fonction( e ){ } => action qui va être déclenchée 
+        //         dans cette fonction dispose d'une paramètre e que tu peux nommer comme tu veux
+
+        //    permet d'avoir des informations précises sur événement déclenché
+        // { target : la balise html surlaquelle l'action s'est déclenchée   }
+
+    </script>
+
+    <p data-info="balbal" data-style="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, sapiente!</p>
+
+    <script>
+        console.log(document.querySelector("p").dataset.info)
+
+        document.querySelector("p").addEventListener("click", function(){
+            console.log(this.dataset.style);
+        })
+
+        document.querySelector("p").addEventListener("click", (e) => {
+            console.log(e.target.dataset.style);
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer un nouveau fichier 10-exo.html 
+
+    <img src="" alt="" data-source="" data-border="" data-legende="" title="">
+
+    <img src="" alt="" data-source="" data-border="" data-legende="">
+
+    image de votre choix qui va avoir des attributs data 
+        data source => appeler l'url d'une autre fichier
+        data border => 2px solid blue
+        data legende => "texte de votre choix"
+        .setAttribute("title", "valeur")
+    
+    image de votre choix qui va avoir des attributs data 
+        data source => appeler l'url d'une autre fichier
+        data border => 2px solid blue
+        data legende => "texte de votre choix"
+
+    en javascript 
+        lorsque votre souris va rentre dans la zone de l'image 
+            changer la src de la balise 
+            mise en forme avec la bordure
+            attribut title avec la valeur présente dans la attribut data legende
+
+        si votre souris sort de l'image => l'image reprend son apparence initiale
+-->
+

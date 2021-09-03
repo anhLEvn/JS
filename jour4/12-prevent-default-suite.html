@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="votre nom">
+        <input type="submit">
+    </form>
+    <script>
+        // 12-prevent-default-suite.html
+        // submit => lorsque on clique sur le bouton de soumission 
+        document.querySelector("form").addEventListener("submit", function( e ){ 
+            e.preventDefault();
+            console.log("j'ai soumis le formulaire");
+            // vérifier que les informations saisies dans le formulaire sont conformes 
+
+            // si tout est conforme alors => soumettre le formulaire 
+            let input = document.querySelector("input").value  ; 
+            if(input != ""){
+                this.submit();
+            } else {
+                alert("vous devez remplir le  champ input avant soumission");
+            }
+        })
+
+        // le comportement par défaut d'un formulaire 
+        // le comportement si absence de preventDefault()
+        // la page se recharge ET les champs du formulaire sont vidés 
+
+        // a associé à l'événement click
+        // form associé à l'événement submit 
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer un nouveau fichier 13-exo.html 
+
+    formulaire qui a 3 champs 
+            input qui permet de saisir son nom
+            textarea qui permet de saisir un commentaire
+            input de type submit qui permet de soumettre le formulaire
+
+    en javascript 
+        écouter lorsque l'internaute va soumettre le formulaire 
+        et vérifier que les champs nom et commentaire contiennent au moins 3 lettres pour que ce soit conforme
+
+        si cette condition est respectée => soumettre le formulaire
+        sinon afficher dans la console le message suivant => veuillez compléter les deux champs 
+-->

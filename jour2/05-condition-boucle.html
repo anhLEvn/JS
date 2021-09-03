@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  05-condition-boucle.html
+
+        // mot clé important if( condition ){}
+
+        // condition = true => exécuter les instructions dans les accolades 
+        // condition = false => ne pas exécuter les instructions dans les accolades 
+
+        let condition = 30 > 40 || 12 != 20 ;
+        //                false ||  true
+        //                      true 
+
+        if( condition ){
+            // true
+            console.log("la condition est respectée");
+        }
+
+        let profil = {
+            nom : "Alain",
+            role : "admin"
+        }
+
+        if(profil.role == "redacteur"){
+            console.log("vous pouvez rédiger des articles");
+        } else if(profil.role == "admin"){
+            console.log("vous pouvez tout faire");
+        } else {
+            console.log("vous n'avez pas accès au back office");
+        }
+
+        switch( profil.role ){
+            case "redacteur" : 
+                console.log("vous pouvez rédiger des articles");
+                break;
+            case "admin" :
+                console.log("vous pouvez tout faire");
+                break;
+            default:
+                console.log("vous n'avez pas accès au back office");
+        }
+
+        let test = profil.role == "gestionnaire" ? "vous pouvez accédez au back office" : "pas d'accès";
+        console.log(test);
+        // if(){} else {}
+
+        //-----------------------------------
+
+
+        // boucles en javascript 
+        // afficher de 1 à 10 dans la console
+        // for
+
+        for(let i = 1 ; i <= 10 ; i++){
+            console.log(i);
+        }
+
+        let i = 1 ;
+        while(i <= 10){
+            console.log(i);
+            i++ ; // i = i + 1
+        }
+
+        // parcourir un tableau 
+
+        let a = ["js", "node", "ajax"];
+        // classique  1
+        for(let i = 0; i < a.length ; i++){
+            console.log(a[i]); // 
+        }
+        // 2
+        let j = 0;
+        while(j < a.length){
+            console.log(a[j]);
+            j++;
+        }
+
+        // ES6 3
+        for(let item of a){ // PHP foreach(){ } // of => valeur
+            console.log(item);
+        }
+        // 4
+        for(let index in a){ // PHP foreach(){ } in => index
+            console.log(a[index]);
+        }
+
+        // objet sont itérables => il est possible de les parcourir 
+
+        let b = {
+            nom : "triangle",
+            largeur : 12 ,
+            couleur : "verte"
+        }
+
+        for(let index in b){
+            console.log(b[index]); // cette syntaxe à utiliser 
+            console.log(b.index); // index = undefined
+        }
+
+
+
+    </script>
+</body>
+</html>

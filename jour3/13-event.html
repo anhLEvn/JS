@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <button>Action1</button>
+    <hr>
+    <button>Action2</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, id?</p>
+  <script>
+   let button = document.querySelectorAll("button"); 
+   button[0].addEventListener("click", () =>  {
+       alert("J'ai cliqué sur le premier button")
+   })
+   let clr = "black"; 
+   button[1].addEventListener("click", () => {
+      if(clr == "black"){
+        document.querySelector("p").style.color ="red";
+      }
+       else{
+        document.querySelector("p").style.color ="black";
+       }
+      
+
+   })
+   let taillePolice ="30px";
+   button[1].addEventListener("click", () =>{
+       if(taillePolice == "30px"){
+           taillePolice == "16px"; 
+       }else{
+           taillePolice == "30px"; 
+       }
+       document.querySelector("p").style.fontSize = taillePolice
+   })
+  </script>
+</body>
+</html>

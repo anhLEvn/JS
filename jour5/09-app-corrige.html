@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       section{
+           display: grid;
+           grid-template-columns: repeat( 4 , 1fr ); /* 1/4 fraction  */ 
+           grid-gap: 10px;
+       }
+       img{
+           max-width: 100%;
+       }
+   </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // données => directement dans le fichier 
+        let data = [
+            {id : 1 , titre : "article 1", contenu : "lorem ipsum 1" , img : "sentrang.jfif"},
+            {id : 2 , titre : "article 2", contenu : "lorem ipsum 2" , img : "senvang.jfif"}
+        ];
+
+    </script>
+    <script>
+        // ajouter dans ma balise div un formulaire qui contient 3 champs
+        window.addEventListener("DOMContentLoaded", () => {
+            const formulaire = `<form onsubmit="return ajouterArticle(this)">
+                    <div>
+                        <input type="hidden" name="id">
+                    </div>
+                    <div>
+                        <label>titre</label>
+                        <input type="text" name="titre">
+                    </div>
+                    <div>
+                        <label>contenu</label>
+                        <br>
+                        <textarea name="contenu"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit">
+                    </div>
+                </form>
+                <section> 
+                    ${genererArticle ()}
+                </section>
+                `;
+            document.querySelector("div").innerHTML = formulaire;
+        })
+    </script>
+    <script>
+        // ajouter à la suite du formulaire (que l'on vient d'ajouter) la liste des articles 
+
+        function genererArticle (){
+            return data.map( article => `<article>
+                <h2>${article.titre}</h2>
+                <img src="${article.img}" alt="">
+                <p>${article.contenu}</p>
+            </article>` ).join("")
+        }
+
+    </script>
+    <script>
+        function ajouterArticle(form){
+
+            // ajouter dans la variable globale data les données saisies dans le formulaire
+            // a/ récupérer les données saisies dans le formulaire
+            let titre = form.titre.value;
+            let contenu = form.contenu.value;
+            let nouvelleArticle = {
+                titre : titre,
+                contenu : contenu,
+                img : "http://via.placeholder.com/300x200"
+            }
+            // ajax => API => base de données (PHP / mySQL // NodeJS )
+            data.push(nouvelleArticle);
+
+            // genererArticle ()
+            document.querySelector("section").innerHTML = genererArticle ();
+
+            form.reset()
+
+            return false ;
+        }
+
+    </script>
+
+</body>
+</html>

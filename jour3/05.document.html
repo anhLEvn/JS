@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Je suis le titre</h1>
+    <p>je suis un paragraphe </p>
+    <p id="info">je suis une info</p>
+    <p class="conclusion"> je suis la conclusion</p>
+    <script>
+        document 
+
+        // sélectionner la balise h1 qui est dans ma page web 
+
+        /*
+            { 
+                getElementById : function(){
+                    return { 
+                        innerHTML : "",
+                        getAttribute : function(){},
+                        classList : {},
+                        addEventListener : function(){},
+                        dataset : {}
+                    }
+                }, // sélecteur 
+                querySelector : function(){}, // fonctions qui permettent de sélectionner une ou plusieurs balises html 
+                querySelectorAll : function(){},
+            }
+        */
+       // je veux sélectionner la balise h1 
+       document.querySelector("h1")
+
+       // je veux sélectionner le contenu html stocké dans la balise h1 
+       document.querySelector("h1").innerHTML 
+
+       // soit je veux le récupérer => afficher dans la console 
+       let titre = document.querySelector("h1").innerHTML  ;  // get
+       console.log(titre);
+
+       // soit je veux le modifier pour modifier dans le navigateur 
+
+       document.querySelector("h1").innerHTML = "bonjour"; // set 
+        
+    </script>
+</body>
+</html>

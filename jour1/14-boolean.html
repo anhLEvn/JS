@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 14-boolean.html
+
+        let a = true ;
+        let b = false ;
+
+        // général un boolean est généré par js suite à une comparaison
+
+        let c = 12 > 3 ;  // true 
+
+        // opérateur de comparaison 
+        // > supérieur strictement
+        // < inférieur strictement
+        // >= supérieur ou égal
+        // <= inférieur ou égal
+        // == égal
+        // != différent
+        // === égal en type et valeur
+        // !== différent en type OU valeur
+
+        let d = 2 ; // number
+        let e = "2"; // string qui contient un chiffre
+
+        let f = d == e ;  
+        //      2 == "2" ; chiffre == string 
+        //      "2" == "2" ; string == string 
+        //      "2" == "2" ; javascript va automatiquement TRANSTYPER les valeurs 
+        //         true 
+        console.log(f);
+
+        let h = d === e ;
+        //      2 === "2"
+        //        false
+        console.log(h);
+
+        let i = d != e ;
+        //      2 != "2"
+        //      "2" != "2"
+        //      false 
+
+        console.log(i); // false 
+
+        let j = d !== e;
+        console.log(j); // true
+
+        // transtypage // Type Coercion
+
+        // opérateur boolean 
+        // && ET
+        // ||  OU
+        // ! NOT 
+
+        let k = 12 > 13 || 20 < 11 ;
+        //          false || false 
+        //              false
+
+        let l = 12 > 13 || 20 > 11 ;
+        //        false ||  true
+        //          true 
+
+        let m = 12 > 13 && 20 > 11 ;
+        //        false &&  true
+        //          false 
+
+        let n = 12 < 13 && 20 > 11 ;
+         //        true &&  true
+        //           true 
+
+        // table des vérités (calcul logique) https://fr.wikipedia.org/wiki/Table_de_v%C3%A9rit%C3%A9
+
+        // AND OR n'existe pas en javascript
+        // XOR n'existe en javascript 
+    </script>
+</body>
+</html>
+<!-- 
+    créer le fichier 15-exo.html 
+
+    déterminer pour chacun de ces calculs logique si le résultat est true false au final ??
+    2 >= 2
+    "a" == "ab"
+    2 != 3 && 10 < 33
+    "hello" > "bonjour" 
+    2 ==  "2"
+    2 === "2"
+    (2 != 5 && 3 > 4 ) || 2 <= 14 
+    2 != 5 && ( 3 > 4  || 2 <= 14 ) 
+    2 != 5 && 3 > 4  || 2 <= 14  
+
+-->

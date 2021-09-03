@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button><!-- 0 -->
+    <button onclick="ecrireDansConsole()">Action 2</button><!-- 1 -->
+    <button>Action 3</button> <!-- 2 -->
+    <script>
+        // 01-event.html
+
+        // lorsque je clique sur le 1er bouton écrire un texte dans la console du navigateur 
+        let button = document.querySelectorAll("button"); // [{},{},{}]
+
+        let a = () => {  
+            console.log("j'ai cliqué sur le premier bouton");
+        }
+
+        button[0].addEventListener( "click" , a );
+        button[0].addEventListener( "click" , () => {  
+            console.log("action 2");
+        } );
+
+        // il existe 2 autres manières d'associer à une balise html un événement et une action 
+        // en 1995 
+        let ecrireDansConsole = () => {
+            console.log("je viens de cliquer sur le deuxième bouton");
+            button[0].removeEventListener("click" , a) // supprimer nouvelle méthode
+            button[2].onclick = () => {} // supprimer une action sur la 3ème manière 
+        }
+
+        // 3ème manière d'associer des événements à une balise 
+        button[2].onclick = function (){  console.log("je viens de cliquer sur le troisième bouton") };
+        button[2].onclick = () =>  console.log("blabal"); 
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer le fichier 02-exo.html 
+
+    partie html 
+        2 image de votre choix 
+        liste <ul> qui contient deux items <li> contenant un bouton 
+
+    par défaut la deuxième image est masquée
+    si vous cliquez sur le 1er bouton afficher la première image et masquer l'autre
+    si vous cliquez sur le 2ème bouton afficher la deuxieme image et masquer l'autre
+
+    => diaporama 
+-->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function parlindrome(motSaisie){
+   let re = /[\W_]/g;
+  let lowRegMot = motSaisie.toLowerCase().replace(re, '');
+  let reverseMot = lowRegMot.split('').reverse().join(''); 
+  return reverseMot === lowRegMot;
+}
+console.log(parlindrome("lol")); 
+console.log(parlindrome("kayak")); 
+console.log(parlindrome("laos")); 
+
+let palindrome = str =>{
+    let inverseStr = ""; 
+    for(let i = str.length -1; i >= 0; i--){
+        inverseStr += str[i]; 
+    }
+
+    if(inverseStr == str){
+        return true; 
+    }
+    return false; 
+}
+console.log(palindrome("lol")); 
+console.log(palindrome("kayak")); 
+console.log(palindrome("laos")); 
+  </script>
+</body>
+</html>
+<!--créer le fichier 08-exo.html 
+
+    créer une fonction dont le nom est palindrome et prenant un paramètre nommé str
+
+    - cette fonction doit retourner true si str est un palindrome 
+    - si str n'est pas un str alors la fonction retourne false
+
+    exemples :
+    palindrome("lol") => true
+    palindrome("kayak") => true
+    palindrome("laos") => false
+    palindrome("table") => false
+-->

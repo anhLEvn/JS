@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:3px solid red;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // événements déclenchés via des actions réalisées via la souris 
+
+        // click 
+
+        const div = document.querySelector("div");
+
+        div.addEventListener("click", function(){ 
+            this.innerText = "j'ai cliqué sur la div";
+        });
+
+        // la souris rentre dans la balise mouseenter
+        div.addEventListener("mouseenter", function(){
+            this.innerText = "la souris vient de rentrer dans la div";
+        })
+
+        div.addEventListener("mouseover", function(){
+            this.innerText = "encours de survol de la div sur les enfants mais ici absents";
+        })
+
+        // la souris sort de la balise mouseleave
+        div.addEventListener("mouseleave", function(){
+            this.innerText = "la souris vient de sortir de la div";
+        });
+
+        // mouseover dans la zone et survol
+        // mouseenter ne se déclenche qu'une fois lors de l'entrée dans la zone
+        // mousedown / mouseup 
+
+    </script>
+</body>
+</html>

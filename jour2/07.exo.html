@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function tempoExCF(tempoC){
+     let tempoF = ((tempoC * 9) /5) + 32
+      console.log(tempoF) ;
+  }; 
+
+  tempoExCF(30);
+  tempoExCF(22)
+ 
+
+  function tempoExFC(tempoF){
+      let tempoC = ((tempoF -32) *5) /9 ; 
+      console.log(tempoC) ;
+  }; 
+
+  tempoExFC(100)
+  tempoExFC(66)
+
+  let tempoExgCF = tempoC => (tempoC / 5 * 9) + 32; 
+  let tempoExgFC = tempoF => (tempoF -32) /9 * 5
+
+  console.log(tempoExgCF(15));
+  console.log(tempoExgFC(100));
+
+  </script>
+</body>
+</html>
+<!-- créer le fichier 07-exo.html contenant une balise script 
+
+    voici la formulaire : degreCelsus / 5 = (degreFarenheit - 32) / 9 
+
+
+    créer une fonction avec un argument qui permet de convertir une température en Celsus et Farenheit
+    degré en Celsus => température en Farenheit
+    
+    
+    créer une fonction avec un argument qui permet de convertir une température en Farenheit et Celsus
+    température en Farenheit => degré en Celsus
+
+    la formule est disponible dans le schéma à droite
+-->

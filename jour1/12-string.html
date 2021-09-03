@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 12-string.html
+        // chaine de caractère => 1 opération concaténation 
+        // addition de chaines de caractères
+
+        let auteur = "Victor";
+        let nom = "Hugo"
+
+        // manière classique de faire de la concaténation 
+        let auteurFrancais = auteur + " " + nom;
+        console.log(auteurFrancais);
+
+        // manière classique 2 de faire de la concaténation opérateur unaire +=
+        let adresse = "75 rue de Paris" ;
+            adresse += " 75000 " ;
+            adresse += "Paris";
+
+        // concaténation avec 1 seule variable 
+        console.log(adresse);
+
+        // manière ES6 en utilisant les templates string 
+        let auteurFrancais2 = `${ auteur } ${ nom }`;
+        console.log(auteurFrancais2);
+
+        let auteurFrancais3 = auteur.concat(" ", nom)
+        console.log(auteurFrancais3);
+
+        // google MDN console => comment l'utiliser ? 
+        //                    => comment la fonction est codée => 
+        
+        console.log( new String("toto") );
+
+        // en javascript 
+        let toto = "ablabla";
+        // en fait le compilateur jvascript 
+        // let toto = new String("ablabla")
+        let t = new String ("tezr");
+        console.log(t);
+
+        let prix = 12
+        // let prix = new Number(12)
+
+        let test = false ;
+        // let test = new Boolean(false) ;
+
+    </script>
+</body>
+</html>

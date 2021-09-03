@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log( window ); // gros objet créé par javascript 
+
+        // je veux récupérer l'adresse de la page en cours d'exécution 
+
+        console.log( window.location );
+
+        console.log( window.location.href );
+
+        // récupérer des informations qui sont disponibles dans la  page web 
+
+        console.log( window.document ); // objet => le contenu html du la page 
+
+        // combien de propriétés de méthodes possède l'objet document 
+
+        let i = 0 ;
+        for(let prop in window.document){
+            i++ ;
+        }
+        console.log(i); // 264 propres , en fait plus 
+
+        // Chrome / Firefox / Opéra / Safari / Edge 
+        // Association ES 6 => ECMAScript => plan définir le langage javascript 
+        // idée 
+        // mdn 
+        // https://caniuse.com/
+        // polyfill 
+
+        console.log( window.navigator ); 
+
+       // ["toto", "tata"].filter()
+
+        // LA méthode que le plus utiliser document 
+        // récupérer les informations dans la page web et les modifier 
+
+        window.document 
+        document // javascript va ajouter avant window.document
+
+        // window objet global implicite 
+
+        window.console.log( )
+        console.log()
+
+        console.log(window.location)
+        console.log(location);
+
+
+    </script>
+</body>
+</html>

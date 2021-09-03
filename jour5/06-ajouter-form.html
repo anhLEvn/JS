@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <h1>Questionnaire </h1>
+        <button>Ajouter une nouvelle question</button>
+        <hr>
+    </div>
+    <script>
+        // étape 1
+        // lorsque je clique sur le bouton => ajouter à la fin de la balise qui a la class app
+        // un formulaire
+        //       input text + input submit
+
+        document.querySelector("button").addEventListener("click", () => {
+            /* const form = `<form>
+                    <input type="text">
+                    <input type="submit">
+                </form>`; */
+            // document.querySelector(".app").innerHTML +=  form; 
+
+            const form = document.createElement("form"); // créer un objet FormHTML
+            const textInput = document.createElement("input"); // crée un objet InputHTML
+            textInput.setAttribute("type", "text");
+            textInput.setAttribute("value", "à remplir");
+            textInput.setAttribute("data-info", "babla");
+            const submitInput = document.createElement("input");// crée un objet InputHTML
+            submitInput.setAttribute("type", "submit");
+
+            form.appendChild(textInput);
+            form.appendChild(submitInput);
+
+            document.querySelector(".app").appendChild(form) ;
+            // document.querySelector(".app").append( form );
+        });
+        // si je clique sur le bouton => ça fonctionne 
+        // MAIS si je clique une autre fois ?????? => ça ne fonctionne plus ???? 
+        // pourquoi ?? 
+        // document.querySelector(".app").innerHTML +=  form; 
+        // document.querySelector(".app").innerHTML =  document.querySelector(".app").innerHTML + form; 
+        // re remplir le balise qui a la class app
+        // MAIS association nouveau bouton qui a été remplacé avec l'action javascript 
+        // n'a pas été r
+    </script>
+</body>
+</html>
+
+<!-- 07-ajouter-form-suite.html -->

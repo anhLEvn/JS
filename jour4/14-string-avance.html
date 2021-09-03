@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text">
+        <input type="submit">
+    </form>
+
+    <script>
+        let email = "test@yahoo.fr";
+
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault();
+
+            let emailFormulaire = document.querySelector("input").value;
+
+            console.log(emailFormulaire);
+        })
+
+        // effectuer des traitements 
+        
+        let phrase = "bonjour lEs amis";
+
+        // mettre toutes les lettres minuscules 
+        console.log(phrase.toLowerCase());
+
+        // mettre toutes les lettres majuscules
+        console.log(phrase.toUpperCase()); 
+
+        // mettre la première lettre de chaque mot en majuscule et les autres lettres en minuscules
+        // n'existe pas => faire un exercice 
+
+        // transformer un string => tableau en utilisant un caractère de séparation
+        console.log(phrase.split(" "))
+        console.log(phrase.split("o"))
+
+        // substr() / substring() prendre une partie d'une chaine de caractère 
+        console.log(phrase.substring( 0, 7))
+        // 0 position de la première lettre où on fait l'extraction
+        // 7 nombre de caractère à partir de la position 
+
+        // est ce que dans un texte elle contient le mot "amis" ?? 
+        // .includes()
+
+        console.log(phrase.includes("amis")); // true
+        console.log(phrase.includes("aMis")); // false 
+
+        // expression régulière // regex 
+        // est ce que le texte vérifier une forme ?? 
+        // est ce que le texte correspond pattern ?? 
+
+        // email
+        let emailPro = "azertyuiop" ; 
+        let emailPro2 = "azertyuiop@" ; 
+        let emailPro3 = "azertyuiop@yahoo" ; 
+        let emailPro4 = "azertyuiop@yahoo.fr" ; // la forme de la chaine de caractère correspond la forme d'un email valide 
+
+        // Regex
+        let pattern1 = new RegExp("a") ; // est ce que dans la string que je vais chercher 
+                                        // est ce qu'elle contient la lettre a 
+
+        let salutation = "hello";
+        console.log(salutation.match(pattern1)); // null
+
+        let salutation2 = "je vis à Paris";
+        console.log(salutation2.match(pattern1)) ; // Array[]
+
+        let pattern2 = /a/ ; // autre manière de créer une expression régulière
+
+        console.log(salutation.match(pattern2));  // null
+        console.log(salutation2.match(pattern2));  // Array[]
+
+        // plage de lettres est ce que dans une chaine de caractère a et la lettre m
+
+        let pattern3 = /[a-m]/ ;
+
+        let phrase3 = "zorro";
+
+        console.log(phrase3.match(pattern3)); 
+
+        console.log("je suis une formation en js".match(/[a-m]/));
+        // dès qu'il y a un caractère qui qui est dans la plage de [a-m] et il stoppe 
+
+        // plage de caractères 
+        // [a-z] => toutes les lettres minuscules
+        // [A-Z] => toutes les lettres majuscules
+        // [0-9] => toutes les chiffres 
+        // cumuler les plages de caractères [a-zA-Z] toutes les lettres minuscules et majuscules
+
+        console.log("010101011010".match(/[a-zA-Z]/));
+        console.log("010101011010".match(/[3-9]/));
+        console.log("010101011010".match(/[0-9a-zA-Z]/));
+
+        // téléphone 
+
+    </script>
+</body>
+</html>
+<!-- 
+    créer le fichier 15-exo.html 
+
+    formulaire input + bouton de soumission
+
+    javascript verifier que la valeur saisie dans l'input contient bien au moins un chiffre entre 0 et 9
+    si cette condition est respectée => alert("la condition est respectée !!!");
+    si non message d'erreur de votre choix dans la console 
+-->

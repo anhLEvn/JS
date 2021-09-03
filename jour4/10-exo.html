@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:200px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <img src="diapo1.jpg" alt="" data-source="diapo2.jpg" data-border="2px solid blue" data-legende="diapositive 1">
+    <img src="http://via.placeholder.com/200x100?text=diapo 2" alt="" data-source="http://via.placeholder.com/200x100?text=diapo 2 modifiée" data-border="2px solid red" data-legende="diapositive 2">
+    <img src="http://via.placeholder.com/200x100?text=diapo 2" alt="" data-source="http://via.placeholder.com/200x100?text=diapo 2 modifiée" data-border="2px solid green" data-legende="diapositive 2">
+    <img src="http://via.placeholder.com/200x100?text=diapo 2" alt="" data-source="http://via.placeholder.com/200x100?text=diapo 2 modifiée" data-border="2px solid purple" data-legende="diapositive 2">
+
+    <script>
+        document.querySelectorAll("img").forEach( item => {
+                let source = item.getAttribute("src"); // closure
+                // let source = item.src ;
+                item.addEventListener("mouseenter", function(){
+                    let sourceModifiee = this.dataset.source;
+                    let bordure = this.dataset.border;
+                    let legende = this.dataset.legende;
+                    this.style.border = bordure;
+                    this.setAttribute("title", legende);
+                    this.setAttribute("src", sourceModifiee); // la valeur dans  sourceModifiee
+                });
+                item.addEventListener("mouseleave", function(){
+                    this.setAttribute("title", "");
+                    this.setAttribute("src", source); // ici
+                    this.style.border = "";
+                })
+            }
+        )
+    </script>
+</body>
+</html>
+<!-- 11-prevent-default.html -->

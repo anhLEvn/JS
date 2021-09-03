@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Action 1</button>
+    <script>
+        // 07-this-arrow-function.html
+
+        function a (){
+            this.innerHTML = "bonjour";
+        }
+        document.querySelector("button").addEventListener("click", a);
+
+        document.querySelector("button").addEventListener("click", function(){
+            console.log("methode 2");
+            console.log(this); //bouton
+            this.innerHTML = "deuxième écriture";
+        })
+
+        // arrow function ??? 
+        document.querySelector("button").addEventListener("click", () => {
+            console.log("methode 3");
+            console.log(this) ; // window
+            this.innerHTML = "troisième syntaxe";
+        })
+
+        // .bind()
+        // .apply()
+        // .call()
+
+        // bon appétit rdv 13h36 bon app !!!!!!!!!!!!!!!!!!!!
+
+
+
+    </script>
+</body>
+</html>

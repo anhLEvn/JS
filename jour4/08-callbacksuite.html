@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // créer une fonction qui a deux paramètres 
+        /**
+         * fn => fonction
+         * nombre => number
+         * */       
+        function calcul ( fn , nombre ){
+            fn(nombre);
+        }
+
+        // 2 manières d'exécuter la fonction 
+        // 1ère manière
+        calcul(function(x){ console.log(x) }, 200 )
+
+        // 2ème manière 
+        function b(x){
+            console.log(x); 
+        }
+
+        calcul( b , 400 )
+
+        // 3ème manière 
+        calcul ( function(){ b( 600 ) });
+
+        // entre les deux 
+
+        calcul( b() , 500) // ça ne donne pas le résultat attendu
+
+    </script>
+
+</body>
+</html>
+
+<!-- 09-this-arrow-function-suite.html -->

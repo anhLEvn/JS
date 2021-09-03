@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="07-script-2.js" defer></script>
+    <script>
+        window.addEventListener("DOMContentLoaded" , () => {
+            document.querySelector("h2").innerHTML ;
+        })
+    </script>
+</head>
+<body>
+    <!-- 
+        window 
+        document se charge au fur et à mesure et à mesure de la page 
+    -->
+    
+    <h2>je suis le titre</h2>
+    <script>
+        document.querySelector("h2").innerHTML ; 
+        // attention document et window peuvent ne pas connaitre les balises SI vous avez la balise script AVANT la balise concernée 
+        // message d'erreur 
+        // TypeError: document.querySelector(...) is null
+
+        // première solution Ecire 100% de votre html puis d'utiliser la balise script 
+        // mode avant 2017 
+        // 2017 ajouter l'attribut defer dans la balise script 
+    </script>
+
+    <script src="07-script.js"></script>
+    
+</body>
+</html>

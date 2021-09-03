@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div></div>
+    <script>
+        let data = [{
+                id: 1,
+                tache: "rédiger article",
+                etat: true
+            }, {
+                id: 2,
+                tache: "finir exo",
+                etat: false
+            },
+
+        ];
+    </script>
+
+    <script>
+        //ajouter dans la div un formulaire 
+        window.addEventListener("DOMContentLoaded", () => {
+            const formulaire = `<form onsubmit = "return ajouterTache(this)">
+                    <div>
+                        <input type="hidden" name="id">
+                    </div>
+                    <div>
+                        <label> Tache: </label>
+                        <input type="text" name="tache">
+                    </div>
+                    <div>
+                        <label> Etat </label>
+                        <input type="checkbox" name ="checkbox">
+                    </div>
+                    <div>
+                        <input type="submit">
+                    </div>
+                </form>
+                <section> 
+                    ${genererTache()}
+                </section>
+                `;
+            document.querySelector("div").innerHTML = formulaire;
+        })
+    </script>
+    <script>
+        //ajouter à la suite du formulaire une liste 
+        function genererTache() {
+            return data.map(item => `<ul>
+                <li> ${item.tache} - ${item.etat}</li>
+            </ul>`).join("")
+        }
+    </script>
+
+    <script>
+        function ajouterTache(form) {
+
+            // ajouter dans la variable globale data les données saisies dans le formulaire
+            // a/ récupérer les données saisies dans le formulaire
+            let newTache = form.tache.value;
+            let newEtat = form.etat.checked;
+            let newItem = {
+                newTache: tache,
+                newEtat: etat
+            }
+            data.push(newItem);
+
+            // genereList ()
+            document.querySelector("section").innerHTML = genererList();
+
+            form.reset()
+
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
+<!--créer un nouveau fichier 10-exo.html
+
+    div dans le html 
+
+        créer tableau d'objet 
+            [
+                {id : 1, tache : "rédiger article" , etat : true}
+                {id : 2, tache : "finir exo" , etat : false}
+            ]
+    
+    ajouter dans la div un formulaire 
+        input de type texte
+        input de type checkbox 
+        submit
+    
+    ajouter à la suite du formulaire une liste 
+        <ul>
+            <li>rédiger article - état fait</li>
+            <li>finir exo - état en cours</li>
+        <ul>
+
+    si vous cliquez sur le bouton ajouter du formulaire => ajouter une nouvelle <li> dans la liste 
+        -->

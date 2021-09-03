@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let calcuTVA = prixHT => prixHT *1.2; 
+
+  function genererFacture(total){
+      console.log(`votre facture à payer eset de ${calcuTVA(total)}`)
+  }
+
+  genererFacture(300)
+
+  let articles = ["article 1", "article 2", "article 3"]; 
+  let articleHtml = []; 
+  for(let i = 0; i < articles.length; i++){
+      articleHtml.push(`<h1>${articles[i]}</h1>`)
+  }
+  console.log(articleHtml)
+
+  </script>
+</body>
+</html>

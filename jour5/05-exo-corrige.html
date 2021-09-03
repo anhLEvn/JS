@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div><input type="text" placeholder="votre nom"></div>
+        <div><input type="text" placeholder="votre@email.fr"></div>
+        <div><textarea name="" id="" cols="30" rows="10" placeholder="votre commentaire"></textarea></div>
+        <div><input type="submit" value="Envoyer"></div>
+    </form>
+    <script>
+
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault();
+
+            const input = document.querySelectorAll("input");
+            const textarea = document.querySelector("textarea");
+
+            const patternNom = /^[a-zA-Z ']{5,255}$/ ;
+            const patternEmail = /^[_a-z0-9\-\.]+@[a-z]+\.[a-z]{2,}$/; 
+            const patternCommentaire = /^[^<>]{5,}$/;
+            
+            let verif = [];
+            if(!input[0].value.match(patternNom)){
+                verif.push("le champ nom n'est pas conforme");
+            }
+            
+            if(!input[1].value.match(patternEmail)){
+                verif.push("le champ email n'est pas conforme");
+            }
+
+            if(!textarea.value.match(patternCommentaire)){
+                verif.push("le champ commentaire n'est pas conforme");
+            }
+            console.log(verif);
+            if(verif.length == 0){
+                alert("merci pour votre message");
+                // e.target.reset(); 
+                e.target.submit();
+            } else {
+                console.log(verif);
+            }
+        })
+
+    </script>
+</body>
+</html>

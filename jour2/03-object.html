@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 03-object.html
+        // comme les tableaux, les objets permettent de stocker plusieurs valeurs dans une seule variable 
+
+        // il existe plusieurs en javascript de créer des objets
+        // contrairement à d'autres langages informatiques PHP, il n'est pas nécessaire d'avoir une class pour créer un objet 
+
+        // en javascript créer un objet manuelle 
+
+        // en général pour créer un objet 
+        // 1 créer une class 
+
+        class A { // notation PascalCase
+            largeur = 10 ; // ne pas utiliser let pour définir les propriétés de la class
+            hauteur = 20 ;
+            couleur ;
+        }
+
+        // 2 créer de l'objet qui instance de class 
+        let a = new A();
+
+        console.log(a);
+
+        // en javascript il est possible de créer un objet SANS passer par une class 
+
+        let toto = {
+            largeur : 30 ,
+            hauteur : 22  ,
+            couleur : undefined
+        } ;
+
+        // class B
+        class B{
+            unite ;
+            largeur ; 
+
+            constructor(unite , largeur){
+                this.unite = unite ;
+                this.largeur = largeur ;
+            }
+        }
+
+        let b = new B([], "bonjour");
+        let b3 = new B("blabla",true );
+
+        console.log(b, b3);
+
+        // rapide !!!!!!!!!!!!!!!!!!!!!!!!!!! 
+        let b2 = {
+            unite : "px",
+            largeur : 30
+        }
+
+        // etudiant 
+
+        let etudiant = {
+            prenom : "Alain",
+            nom : "Dupont",
+            age : 22,
+            adresse : {
+                rue : "75 rue de Paris",
+                cp : 75000,
+                ville : "Paris"
+            },
+            estEnFormation : true
+        }; // objet à un rôle de stockage 
+
+        class Adresse{ }
+        class Etudiant{ }
+
+        // let etudiant2 = new Etudiant( new Adresse() );
+
+        let etudiant3 = Object.create( etudiant );
+        etudiant3.prenom = "Patrice";
+        console.log(etudiant3);
+
+        // la syntaxe objet littéral 
+
+        let vehicule = {
+            marque : "Peugeot",
+            anneeAchat : 2012,
+            modele : 206, 
+            details : function(){
+                console.log(`${this.marque} ${this.anneeAchat} ${this.modele}`) ;
+            }
+        };
+
+        // récupérer une valeur dans un objet 
+        // vehicule.anneeAchat 
+        // surtout la première manière de faire 
+
+        // récupérer une valeur dans un objet (à connaître)
+        console.log(vehicule["modele"]) ; 
+
+        vehicule.details(); // exécuter la méthode details stockées dans l'objet
+        // vehicule()
+
+    </script>
+</body>
+</html>

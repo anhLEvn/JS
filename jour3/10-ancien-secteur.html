@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <h1 id = "titre"></h1>
+    <p></p>
+    <p></p>
+    <p></p>
+    <ul>
+        <li class = "couleur"></li>
+        <li class = "couleur"></li>
+        
+    </ul>
+  <script>
+      document.querySelector("h1").innerHTML = "titre principal";
+      document.querySelector("#titre").innerHTML = "titre principal2";
+      document.getElementById("titre").innerHTML = "titre principal 3";
+      
+      document.getElementsByTagName("p").forEach(p => p.innerHTML ="jes suis p2");
+
+      let p = document.getElementsByTagName("p");
+      for(let i = 0; i < p.length; i++ ){
+          p[i].innerHTML = "je suis en p2"; 
+      }
+
+      let li = document.getElementsByClassName("couleur"); 
+      for(let i = 0; i< li.length; i++){
+          li[i].innerHTML = ""
+      }
+
+
+  </script>
+</body>
+</html>

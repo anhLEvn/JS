@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <h1>Questionnaire </h1>
+        <button onclick="ajouterFormulaire()">Ajouter une nouvelle question</button>
+        <hr>
+    </div>
+    <script>
+        // addEventListener()
+        // attribut directement les balises concernées 
+        
+        function ajouterFormulaire(){
+            const form = `<form onsubmit="return validation(this)">
+                <input type="text">    
+                <input type="submit">    
+            </form>`;
+            document.querySelector(".app").innerHTML += form;
+        }
+
+        function validation(form){
+            alert(form[0].value);
+            console.log("la question est bien enregistrée dans la base de données");
+            return false; // e.preventDefault() QUAND on est dans addEventListener()
+        }
+
+        // [Violation]'submit' handler
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer un nouveau fichier 08-exo.html
+
+    dans ce fichier div qui la class gestion
+        h1 qui contient le texte "Ajouter un nouveau profil"
+        bouton qui contient le texte "Ajouter"
+        trait de séparation
+
+    en javascript => 
+        une fois que vous avez cliquer sur le bouton ajouter à la fin de la balise .gestion
+        un formulaire avec 3 champs 
+            input => login
+            input => mot de passe
+            bouton de soumission
+
+        si vous cliquez sur le bouton de soumission alors afficher dans un alert le login et le mot de passe saisit
+        vérifier au préalable que ces deux champs au minium 5 caractères maximum 100 caratères
+        contenir minuscule / majuscule / espace 
+
+
+-->

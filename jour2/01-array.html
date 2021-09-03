@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  // créer un tableau javascript : plusier manieres
+
+  // La maniere la plus utiliser []
+    let a = [1, 2, 3, "hello", false, [], {}]; // {} est un objet
+
+  // ou 
+    let b = [
+      "formation", 
+      "js", 
+      "ajax", 
+      "nodeJs",
+      "angular"
+    ];
+
+    let phase = `je suis une ${b[0]} en ${b[1]} avec un module ${b[4]}`; // PHP Twig templet
+    console.log(phase); 
+
+    // traitment sur les tableaux => operation sur les tableaux
+    //- ajouter un nouveau item à un tableau
+    let vehicule = ["Citroen", "Peugeot"];
+    console.log(vehicule); 
+    // 4 manière 
+    // - ajouter a la fin de tableau
+    vehicule.push("Volve Wagent"); 
+    vehicule.push("Toyota", "Renault")
+    console.log(vehicule); 
+
+    // ajouter au debut de tableau
+    vehicule.unshift("Huyndai");
+    vehicule.unshift("Kia", "Izusu"); 
+    console.log(vehicule)
+
+    vehicule.splice(1, 3, "Honda")
+    console.log(vehicule)
+    // supprimer le premier élément
+    vehicule.pop();
+    console.log(vehicule);
+
+    // supprimer premier élément
+    vehicule.shift(); 
+    console.log(vehicule);
+
+    // vider tout le tableau
+    vehicule = []; 
+    console.log(vehicule)
+    
+
+  </script>
+</body> 
+</html>

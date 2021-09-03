@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+      // maniere 1
+  function a(){
+
+  } //  => pour executer cette fonction
+  a();
+
+  //maniere 2
+  let b = function(){}; 
+  // => pour executer cette fonction
+  b(); 
+  // maniere3
+ 
+  let c = () => {}; // version 6ES6 de JVS
+  // => pour executer cette fonction
+  c(); 
+
+  function addition(a, b){
+      let result = a + b; 
+      console.log(result); 
+  }
+  addition(1,2);
+
+  let genererArticle = () =>  {
+      return ""
+
+    //   return "<h1>titre </h1>"
+  }
+
+  function tester2(){
+      console.log(arguments); 
+  }
+
+  tester2(); 
+  tester2(1);
+  tester2(2,4,6,7,9)
+
+  function add4(...numbers){
+      let result = 0; 
+      for(let number of numbers){
+          result += number; 
+      }
+      console.log(result); 
+  }
+  add4(2,5,7);
+  add4(8,6);
+  add4(4,6,8)
+  </script>
+</body>
+</html>

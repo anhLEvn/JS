@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- en html5 => créer vos propres attributs / attributs personnalisés -->
+    <button data-couleur="red" data-texte="bonjour" data-font-style="normal" >Action 1</button>
+    <button data-couleur="blue" data-texte="salut" data-font-style="italic" >Action 2</button>
+    <!-- xml -->
+
+    <script>
+        // lorsque je clique sur le premier bouton 
+        //changer le texte par le texte contenu dans l'attribut data-texte
+        //changer la couleur de texte par la valeur contenue dans l'attribut data-couleur
+        //changer la style de texte par la valeur contenue dans l'attribut data-style
+
+        let btn = document.querySelectorAll("button");
+
+        function changement(){
+           console.log( this.dataset );  // { couleur → "red", texte → "bonjour", fontStyle → "normal" }
+           this.innerText = this.dataset.texte;
+           this.style.color = this.dataset.couleur;
+           this.style.fontStyle = this.dataset.fontStyle;
+        }
+
+        /* btn[0].addEventListener("click" , changement)
+        btn[1].addEventListener("click" , changement) */
+
+        btn.forEach( item => item.addEventListener("click" , changement) );
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer un nouveau fichier 06-exo.html 
+
+    3 boutons chacun contenant un texte => onglet 1 // onglet 2 // onglet 3
+    3 paragraphes => chaque paragraphe contient du lorem ipsum
+
+    script =>
+        par défaut seul le 1er p est affiché, les autres sont masqués 
+        si vous cliquez sur le premier bouton => afficher le 1er p et masquer tous les autres
+        si vous cliquez sur le deuxième bouton => afficher le 2eme p et masquer tous les autres
+        si vous cliquez sur le troisième bouton => afficher le 3eme p et masquer tous les autres
+-->
